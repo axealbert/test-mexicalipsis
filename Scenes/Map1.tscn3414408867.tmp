@@ -313,4 +313,4 @@ tile_set = SubResource("TileSet_4ov7l")
 
 [node name="Jugador" parent="." unique_id=1202051772 instance=ExtResource("2_vjepk")]
 position = Vector2(-100, -26)
-jump_speed = 225
+jump_speed = 350
