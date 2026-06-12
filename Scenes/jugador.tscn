@@ -2,22 +2,27 @@
 
 [ext_resource type="Script" uid="uid://byt62g4klkq74" path="res://scripts/jugador.gd" id="1_c1mnh"]
 [ext_resource type="Texture2D" uid="uid://c7mn2ya41iubh" path="res://SpritesMexicalipsis - copia/spriteidle.png" id="2_c1mnh"]
+[ext_resource type="Texture2D" uid="uid://dt45d7rscejpn" path="res://SpritesMexicalipsis - copia/pixil-frame-0 (2).png" id="3_a0p7g"]
 [ext_resource type="Texture2D" uid="uid://jgjgl7xk6n2s" path="res://SpritesMexicalipsis - copia/spritesrun.png" id="3_tn1hq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0p7g"]
+atlas = ExtResource("2_c1mnh")
+region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oua2g"]
 atlas = ExtResource("2_c1mnh")
 region = Rect2(100, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tn1hq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aknpy"]
 atlas = ExtResource("2_c1mnh")
 region = Rect2(0, 0, 100, 100)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0p7g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bknw"]
 atlas = ExtResource("2_c1mnh")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mb44e"]
-atlas = ExtResource("2_c1mnh")
+atlas = ExtResource("3_a0p7g")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4xcq"]
@@ -48,6 +53,9 @@ region = Rect2(400, 0, 100, 100)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_a0p7g")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oua2g")
 }],
 "loop": true,
@@ -55,11 +63,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_tn1hq")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aknpy")
 }, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_a0p7g")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bknw")
 }],
 "loop": true,
 "name": &"idle",
@@ -98,25 +106,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4xcq"]
-size = Vector2(13, 29.90625)
+size = Vector2(11, 37)
 
-[node name="Jugador" type="CharacterBody2D" unique_id=1202051772]
-position = Vector2(3, -6)
+[node name="Jugador" type="CharacterBody2D" unique_id=1202051772 groups=["Jugador"]]
+position = Vector2(4, -23)
 script = ExtResource("1_c1mnh")
 move_speed = 150
-jump_speed = 200
+jump_speed = 400
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1082166091]
 texture_filter = 1
-position = Vector2(-8, -9.41308)
-scale = Vector2(0.28, 0.3717384)
+scale = Vector2(0.39, 0.43)
 sprite_frames = SubResource("SpriteFrames_a0p7g")
-animation = &"fall"
+animation = &"idle"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252110744]
-position = Vector2(-9, -6)
+position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_n4xcq")
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1245093011]
+position = Vector2(-2, 3)
 zoom = Vector2(3.5, 3.5)
+metadata/_edit_group_ = true

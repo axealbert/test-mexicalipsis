@@ -44,8 +44,11 @@ func jump(delta):
 func flip():
 	if (velocity.x < 0 && facing_right) or (not facing_right and velocity.x > 0):
 		scale.x *= -1
+		
 		facing_right = not facing_right
 		animation.play("run")
+		
+		
 	
 func move_x():
 	var direction := Input.get_axis("move_left", "move_right")

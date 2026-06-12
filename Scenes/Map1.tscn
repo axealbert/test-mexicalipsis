@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bit8ed8gp7d51" path="res://SpritesMexicalipsis - copia/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/midground_/spring_.png" id="1_32aui"]
 [ext_resource type="PackedScene" uid="uid://c5ag8eh0wwykl" path="res://Scenes/jugador.tscn" id="2_vjepk"]
+[ext_resource type="PackedScene" uid="uid://dippjso21b570" path="res://Scenes/bottle.tscn" id="3_4ov7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjepk"]
 texture = ExtResource("1_32aui")
@@ -308,9 +309,17 @@ sources/0 = SubResource("TileSetAtlasSource_vjepk")
 [node name="Map1" type="Node2D" unique_id=1943373487]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1273839979]
-tile_map_data = PackedByteArray("AAD7/wAAAAAAAAIAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAABAAIAAAD+/wAAAAACAAMAAAD+/wEAAAACAAQAAAAAAAAAAAAAAAwAAAABAAAAAAABAAwAAAADAAAAAAAAAAMAAAADAAEAAAAAAAQAAAAEAAAAAAABAAMAAAAEAAEAAAABAAQAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAQAAAAGAAAAAAABAAMAAAAGAAEAAAABAAQAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAQAAAAIAAAAAAABAAMAAAAIAAEAAAABAAQAAAA=")
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAADAAAAAAAAAAMAAAADAAEAAAAAAAQAAAAEAAAAAAABAAMAAAAEAAEAAAABAAQAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAQAAAAGAAAAAAABAAMAAAAGAAEAAAABAAQAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAQAAAAIAAAAAAABAAMAAAAIAAEAAAABAAQAAAD6/wAAAAAAAAMAAAD9/wAAAAABAAMAAAD//wAAAAABAAMAAAD6/wEAAAAAAAQAAAD7/wEAAAABAAQAAAD8/wEAAAAAAAQAAAD9/wEAAAABAAQAAAD//wEAAAABAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_4ov7l")
 
 [node name="Jugador" parent="." unique_id=1202051772 instance=ExtResource("2_vjepk")]
-position = Vector2(-100, -26)
-jump_speed = 225
+position = Vector2(-69, -24)
+
+[node name="Area2D" parent="." unique_id=1697067387 instance=ExtResource("3_4ov7l")]
+position = Vector2(-18, -8)
+
+[node name="Area2D2" parent="." unique_id=1684095726 instance=ExtResource("3_4ov7l")]
+position = Vector2(13, -9)
+
+[node name="Area2D3" parent="." unique_id=1795987429 instance=ExtResource("3_4ov7l")]
+position = Vector2(60, -8)

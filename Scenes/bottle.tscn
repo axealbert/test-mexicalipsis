@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dippjso21b570"]
+
+[ext_resource type="Script" uid="uid://daue1mh1g3p21" path="res://scripts/bottle.gd" id="1_6a73h"]
+[ext_resource type="Texture2D" uid="uid://d1beu0egnulm2" path="res://SpritesMexicalipsis - copia/bottlesprite.png" id="1_35es5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35es5"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a73h"]
+atlas = ExtResource("1_35es5")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3hbp"]
+atlas = ExtResource("1_35es5")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcbne"]
+atlas = ExtResource("1_35es5")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4j8r"]
+atlas = ExtResource("1_35es5")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqmjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a73h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3hbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcbne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4j8r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1697067387]
+position = Vector2(6, 0)
+script = ExtResource("1_6a73h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362099436]
+position = Vector2(0.062503815, 0)
+shape = SubResource("CapsuleShape2D_35es5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1163068576]
+position = Vector2(0.031251907, 0.7578144)
+scale = Vector2(0.10062502, 0.09515627)
+sprite_frames = SubResource("SpriteFrames_xqmjo")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.19799475
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
