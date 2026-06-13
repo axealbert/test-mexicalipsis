@@ -6,12 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://jgjgl7xk6n2s" path="res://SpritesMexicalipsis - copia/spritesrun.png" id="3_tn1hq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0p7g"]
-atlas = ExtResource("2_c1mnh")
+atlas = ExtResource("3_a0p7g")
 region = Rect2(0, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oua2g"]
-atlas = ExtResource("2_c1mnh")
-region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aknpy"]
 atlas = ExtResource("2_c1mnh")
@@ -54,9 +50,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a0p7g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oua2g")
 }],
 "loop": true,
 "name": &"fall",
@@ -71,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,27 +75,27 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.9,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_n4xcq")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iw3ti")
 }, {
-"duration": 0.9,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5nsjc")
 }, {
-"duration": 0.9,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6vc6x")
 }, {
-"duration": 0.9,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3cdix")
 }, {
-"duration": 0.9,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x1a6r")
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4xcq"]
@@ -112,14 +105,15 @@ size = Vector2(11, 37)
 position = Vector2(4, -23)
 script = ExtResource("1_c1mnh")
 move_speed = 150
-jump_speed = 400
+jump_speed = 300
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1082166091]
 texture_filter = 1
 scale = Vector2(0.39, 0.43)
 sprite_frames = SubResource("SpriteFrames_a0p7g")
-animation = &"idle"
+animation = &"fall"
+frame_progress = 0.22272813
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252110744]

@@ -46,14 +46,15 @@ animations = [{
 [node name="Area2D" type="Area2D" unique_id=1697067387]
 position = Vector2(6, 0)
 script = ExtResource("1_6a73h")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362099436]
-position = Vector2(0.062503815, 0)
+position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_35es5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1163068576]
-position = Vector2(0.031251907, 0.7578144)
-scale = Vector2(0.10062502, 0.09515627)
+position = Vector2(-1, 1)
+scale = Vector2(0.11062503, 0.10515627)
 sprite_frames = SubResource("SpriteFrames_xqmjo")
 animation = &"idle"
 autoplay = "idle"

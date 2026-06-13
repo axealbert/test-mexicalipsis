@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cglnbn6pcbaod"]
+
+[ext_resource type="Texture2D" uid="uid://d1beu0egnulm2" path="res://SpritesMexicalipsis - copia/bottlesprite.png" id="1_jxero"]
+[ext_resource type="Script" uid="uid://dpw06d2hwsmru" path="res://scripts/ui.gd" id="1_qdvrb"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1825512844]
+script = ExtResource("1_qdvrb")
+
+[node name="Control" type="Control" parent="." unique_id=1860570089]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1712281598]
+layout_mode = 0
+offset_left = 107.00009
+offset_top = 45.0
+offset_right = 193.00009
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 75
+text = "00
+"
+
+[node name="Node2D" type="Node2D" parent="Control" unique_id=970639126]
+position = Vector2(150, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Node2D" unique_id=1094534560]
+position = Vector2(-71, 88)
+scale = Vector2(0.7800004, 0.7800004)
+texture = ExtResource("1_jxero")
+hframes = 4

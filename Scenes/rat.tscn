@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ocax0yrcmeue"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yvsq"]
+
+[node name="Rat" type="Node2D" unique_id=1105392782]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1741764353]
+sprite_frames = SubResource("SpriteFrames_0yvsq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1699229449]
+
+[node name="BodyRat" type="CollisionShape2D" parent="Area2D" unique_id=348737171]

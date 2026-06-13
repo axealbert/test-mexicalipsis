@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bit8ed8gp7d51" path="res://SpritesMexicalipsis - copia/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/midground_/spring_.png" id="1_32aui"]
 [ext_resource type="PackedScene" uid="uid://c5ag8eh0wwykl" path="res://Scenes/jugador.tscn" id="2_vjepk"]
 [ext_resource type="PackedScene" uid="uid://dippjso21b570" path="res://Scenes/bottle.tscn" id="3_4ov7l"]
+[ext_resource type="PackedScene" uid="uid://cglnbn6pcbaod" path="res://Scenes/ui.tscn" id="4_2t7xj"]
+[ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="5_f6pk4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjepk"]
 texture = ExtResource("1_32aui")
@@ -309,17 +311,25 @@ sources/0 = SubResource("TileSetAtlasSource_vjepk")
 [node name="Map1" type="Node2D" unique_id=1943373487]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1273839979]
-tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAADAAAAAAAAAAMAAAADAAEAAAAAAAQAAAAEAAAAAAABAAMAAAAEAAEAAAABAAQAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAQAAAAGAAAAAAABAAMAAAAGAAEAAAABAAQAAAAHAAAAAAAAAAMAAAAHAAEAAAAAAAQAAAAIAAAAAAABAAMAAAAIAAEAAAABAAQAAAD6/wAAAAAAAAMAAAD9/wAAAAABAAMAAAD//wAAAAABAAMAAAD6/wEAAAAAAAQAAAD7/wEAAAABAAQAAAD8/wEAAAAAAAQAAAD9/wEAAAABAAQAAAD//wEAAAABAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAQAAAA=")
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAD6/wAAAAAAAAMAAAD9/wAAAAABAAMAAAD//wAAAAABAAMAAAD6/wEAAAAAAAQAAAD7/wEAAAABAAQAAAD8/wEAAAAAAAQAAAD9/wEAAAABAAQAAAD//wEAAAABAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAQAAAD///3/AAAAAAcAAAAAAP3/AAABAAcAAAACAPv/AAAAAAcAAAADAPv/AAABAAcAAAAGAPv/AAAAAAcAAAAHAPv/AAABAAcAAAAIAP7/AAAAAA0AAAAIAP//AAAAAA4AAAAJAP7/AAABAA0AAAAJAP//AAABAA4AAAAKAP//AAAAAA0AAAAKAAAAAAAAAA4AAAALAP//AAABAA0AAAALAAAAAAABAA4AAAAMAP//AAAAAA0AAAAMAAAAAAAAAA4AAAANAP//AAABAA0AAAANAAAAAAABAA4AAAAPAP7/AAACAAMAAAAPAP//AAACAAQAAAA=")
 tile_set = SubResource("TileSet_4ov7l")
 
 [node name="Jugador" parent="." unique_id=1202051772 instance=ExtResource("2_vjepk")]
 position = Vector2(-69, -24)
 
 [node name="Area2D" parent="." unique_id=1697067387 instance=ExtResource("3_4ov7l")]
-position = Vector2(-18, -8)
+position = Vector2(0, -56)
 
 [node name="Area2D2" parent="." unique_id=1684095726 instance=ExtResource("3_4ov7l")]
-position = Vector2(13, -9)
+position = Vector2(47, -88)
 
 [node name="Area2D3" parent="." unique_id=1795987429 instance=ExtResource("3_4ov7l")]
-position = Vector2(60, -8)
+position = Vector2(112, -89)
+
+[node name="Area2D4" parent="." unique_id=1176913105 instance=ExtResource("3_4ov7l")]
+position = Vector2(247, -41)
+
+[node name="CanvasLayer" parent="." unique_id=1825512844 instance=ExtResource("4_2t7xj")]
+
+[node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("5_f6pk4")]
+position = Vector2(-174, 99)
