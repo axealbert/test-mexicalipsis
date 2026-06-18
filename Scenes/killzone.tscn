@@ -2,16 +2,14 @@
 
 [ext_resource type="Script" uid="uid://qxkoprd656ks" path="res://scripts/killzone.gd" id="1_jvagm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyfga"]
-size = Vector2(1977, 29)
-
 [node name="Killzone" type="Area2D" unique_id=878634959]
 position = Vector2(995, 1011)
 script = ExtResource("1_jvagm")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1575356522]
-position = Vector2(6, 5)
-shape = SubResource("RectangleShape2D_iyfga")
+[node name="Timer" type="Timer" parent="." unique_id=2105851913]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

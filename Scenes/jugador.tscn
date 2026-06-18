@@ -102,9 +102,10 @@ animations = [{
 size = Vector2(11, 37)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1202051772 groups=["Jugador"]]
+z_index = 5
 position = Vector2(4, -23)
 script = ExtResource("1_c1mnh")
-move_speed = 150
+move_speed = 130
 jump_speed = 300
 metadata/_edit_group_ = true
 
@@ -123,5 +124,7 @@ metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1245093011]
 position = Vector2(-2, 3)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4)
+limit_bottom = 120
+position_smoothing_enabled = true
 metadata/_edit_group_ = true

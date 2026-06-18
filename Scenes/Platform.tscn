@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bdgbf1xf8kquy"]
+
+[ext_resource type="Texture2D" uid="uid://p48855xsiwt6" path="res://SpritesMexicalipsis - copia/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/objects_/staticObjects_.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(49, 10)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1611645214]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1693659516]
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(159, 119, 50, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683791694]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

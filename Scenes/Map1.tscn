@@ -5,13 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://dippjso21b570" path="res://Scenes/bottle.tscn" id="3_4ov7l"]
 [ext_resource type="PackedScene" uid="uid://cglnbn6pcbaod" path="res://Scenes/ui.tscn" id="4_2t7xj"]
 [ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="5_f6pk4"]
+[ext_resource type="PackedScene" uid="uid://ocax0yrcmeue" path="res://Scenes/rat.tscn" id="6_es4yc"]
+[ext_resource type="PackedScene" uid="uid://bdgbf1xf8kquy" path="res://Scenes/Platform.tscn" id="7_hrdr6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjepk"]
 texture = ExtResource("1_32aui")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.3057747, -8, -1.3057747, 8, -0.9575672, 8, 8, -8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.78346443, -8, 0.08705139, 8, -0.9575672, 8, 8, -8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.78346443, 8, -1.3057747, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.08705139, 8, 0.08705139, 8, 8, -8, 8)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -21,8 +25,11 @@ texture = ExtResource("1_32aui")
 9:0/0 = 0
 10:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.5288715, -8, 0.9575691, 8, 0.9575691, 8, -8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 0.08705139, 8, -0.08705139, 8, -6.877078)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.26115417, -8, -0.26115417)
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
@@ -308,28 +315,101 @@ texture = ExtResource("1_32aui")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vjepk")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hrdr6"]
+distance = -13.0
+
+[sub_resource type="GDScript" id="GDScript_hrdr6"]
+script/source = "extends Area2D
+
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrdr6"]
+radius = 14.3178215
+
+[sub_resource type="Animation" id="Animation_hrdr6"]
+length = 4.0333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-37, -46)]
+}
+
+[sub_resource type="Animation" id="Animation_uifhc"]
+resource_name = "move_up"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-37, -46), Vector2(-37, -46), Vector2(-37, -134), Vector2(-37, -134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2fs2"]
+_data = {
+&"RESET": SubResource("Animation_hrdr6"),
+&"move_up": SubResource("Animation_uifhc")
+}
+
 [node name="Map1" type="Node2D" unique_id=1943373487]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1273839979]
-tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAD6/wAAAAAAAAMAAAD9/wAAAAABAAMAAAD//wAAAAABAAMAAAD6/wEAAAAAAAQAAAD7/wEAAAABAAQAAAD8/wEAAAAAAAQAAAD9/wEAAAABAAQAAAD//wEAAAABAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAQAAAD///3/AAAAAAcAAAAAAP3/AAABAAcAAAACAPv/AAAAAAcAAAADAPv/AAABAAcAAAAGAPv/AAAAAAcAAAAHAPv/AAABAAcAAAAIAP7/AAAAAA0AAAAIAP//AAAAAA4AAAAJAP7/AAABAA0AAAAJAP//AAABAA4AAAAKAP//AAAAAA0AAAAKAAAAAAAAAA4AAAALAP//AAABAA0AAAALAAAAAAABAA4AAAAMAP//AAAAAA0AAAAMAAAAAAAAAA4AAAANAP//AAABAA0AAAANAAAAAAABAA4AAAAPAP7/AAACAAMAAAAPAP//AAACAAQAAAA=")
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD4/wAAAAAAAAMAAAD4/wEAAAAAAAQAAAD5/wAAAAABAAMAAAD5/wEAAAABAAQAAAD8/wAAAAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAQAAAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAD6/wAAAAAAAAMAAAD9/wAAAAABAAMAAAD//wAAAAABAAMAAAD6/wEAAAAAAAQAAAD7/wEAAAABAAQAAAD8/wEAAAAAAAQAAAD9/wEAAAABAAQAAAD//wEAAAABAAQAAAAAAAEAAAAAAAQAAAABAAEAAAABAAQAAAAKAP//AAAAAA0AAAAKAAAAAAAAAA4AAAALAP//AAABAA0AAAALAAAAAAABAA4AAAAMAP//AAAAAA0AAAAMAAAAAAAAAA4AAAANAP//AAABAA0AAAANAAAAAAABAA4AAAAZAPz/AAACAAwAAAAbAPv/AAACAAwAAAAOAP//AAAAAA0AAAAOAAAAAAAAAA4AAAAPAP//AAABAA0AAAAPAAAAAAABAA4AAAAQAP//AAAAAA0AAAAQAAAAAAAAAA4AAAARAP//AAABAA0AAAARAAAAAAABAA4AAAASAP//AAAAAA0AAAASAAAAAAAAAA4AAAATAP//AAABAA0AAAATAAAAAAABAA4AAAAHAPn/AAAAAAAAAAAIAPn/AAABAAAAAAALAPv/AAAAAAAAAAAMAPv/AAABAAAAAAADAP3/AAACAAMAAAADAP7/AAACAAQAAAAHAP7/AAACAAMAAAAHAP//AAACAAQAAAACAPf/AAAAAAAAAAADAPf/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_4ov7l")
 
 [node name="Jugador" parent="." unique_id=1202051772 instance=ExtResource("2_vjepk")]
-position = Vector2(-69, -24)
+position = Vector2(-93, -28)
+jump_speed = 325
 
 [node name="Area2D" parent="." unique_id=1697067387 instance=ExtResource("3_4ov7l")]
-position = Vector2(0, -56)
+position = Vector2(-6, -193)
 
 [node name="Area2D2" parent="." unique_id=1684095726 instance=ExtResource("3_4ov7l")]
-position = Vector2(47, -88)
+position = Vector2(48, -150)
 
 [node name="Area2D3" parent="." unique_id=1795987429 instance=ExtResource("3_4ov7l")]
-position = Vector2(112, -89)
+position = Vector2(126, -114)
 
 [node name="Area2D4" parent="." unique_id=1176913105 instance=ExtResource("3_4ov7l")]
-position = Vector2(247, -41)
+position = Vector2(306, -27)
+
+[node name="Area2D5" parent="." unique_id=147592044 instance=ExtResource("3_4ov7l")]
+position = Vector2(436, -92)
 
 [node name="CanvasLayer" parent="." unique_id=1825512844 instance=ExtResource("4_2t7xj")]
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("5_f6pk4")]
-position = Vector2(-174, 99)
+position = Vector2(-111, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=333573175]
+shape = SubResource("WorldBoundaryShape2D_hrdr6")
+
+[node name="Rat" parent="." unique_id=1105392782 instance=ExtResource("6_es4yc")]
+position = Vector2(192, -31)
+script = SubResource("GDScript_hrdr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat" unique_id=310242019]
+shape = SubResource("CircleShape2D_hrdr6")
+
+[node name="Platform" parent="." unique_id=1611645214 instance=ExtResource("7_hrdr6")]
+position = Vector2(-37, -46)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=177205559]
+libraries/ = SubResource("AnimationLibrary_j2fs2")
+autoplay = &"move_up"

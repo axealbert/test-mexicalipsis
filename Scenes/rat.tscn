@@ -1,12 +1,34 @@
 [gd_scene format=3 uid="uid://ocax0yrcmeue"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0yvsq"]
+[ext_resource type="Texture2D" uid="uid://c3fykf5gmr75y" path="res://SpritesMexicalipsis - copia/ratprueba1.png" id="1_f5n7k"]
+[ext_resource type="Script" uid="uid://pgbeoayyh57y" path="res://scripts/rat.gd" id="1_p0vde"]
 
-[node name="Rat" type="Node2D" unique_id=1105392782]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5n7k"]
+atlas = ExtResource("1_f5n7k")
+region = Rect2(0, 0, 100, 100)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1741764353]
-sprite_frames = SubResource("SpriteFrames_0yvsq")
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0vde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5n7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1699229449]
+[node name="Rat" type="Area2D" unique_id=1863836982]
+script = ExtResource("1_p0vde")
 
-[node name="BodyRat" type="CollisionShape2D" parent="Area2D" unique_id=348737171]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1221277064]
+position = Vector2(-1.9073486e-06, 0.9999981)
+scale = Vector2(0.59, 0.59)
+sprite_frames = SubResource("SpriteFrames_p0vde")
+
+[node name="Timer1" type="Timer" parent="." unique_id=1485071112]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
