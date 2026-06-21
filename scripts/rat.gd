@@ -1,16 +1,20 @@
-extends Area2D
+extends Node2D
 
-@onready var timer_1: Timer = $Timer1
+const SPEED = 60
+var direction = 1
 
-	
-
-
-func _on_body_entered(body: Node2D) -> void:
-	print("moriste por la rata")
-	timer_1.start()
-	
+@onready var ray_cast_right: RayCast2D = $RayCastRight
+@onready var ray_cast_left: RayCast2D = $RayCastLeft
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+func _process(delta: float) -> void:
+	if ray_cast_right.collide_with_areas:
+		direction = -1
+		animated_sprite.flip_h = false
+	if ray_cast_left.collide_with_areas:
+		direction = 1
+		animated_sprite.flip_h = true
+		
+	position.x += direction * SPEED * delta

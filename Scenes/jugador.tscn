@@ -126,5 +126,6 @@ metadata/_edit_group_ = true
 position = Vector2(-2, 3)
 zoom = Vector2(4, 4)
 limit_bottom = 120
+limit_smoothed = true
 position_smoothing_enabled = true
 metadata/_edit_group_ = true
