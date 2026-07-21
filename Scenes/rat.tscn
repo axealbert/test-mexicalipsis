@@ -20,27 +20,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaslg"]
-size = Vector2(41, 24)
+size = Vector2(29, 16)
 
 [node name="Rat" type="Node2D" unique_id=1026026473]
 script = ExtResource("1_p0vde")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1930514507]
-position = Vector2(-1.9073486e-06, 0.9999962)
-scale = Vector2(0.64000005, 0.64000005)
+position = Vector2(9.536743e-07, -9.536743e-07)
+scale = Vector2(0.46000004, 0.46000004)
 sprite_frames = SubResource("SpriteFrames_1v7x8")
+autoplay = "default"
+frame_progress = 0.005199047
 metadata/_edit_group_ = true
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("2_p0vde")]
-position = Vector2(0, 1)
+position = Vector2(6, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1192983229]
-position = Vector2(-0.5, 2)
+position = Vector2(-6.5, 6)
 shape = SubResource("RectangleShape2D_qaslg")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=1695927238]
-target_position = Vector2(24, 0)
+target_position = Vector2(14, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=318930865]
 position = Vector2(-1, 0)
-target_position = Vector2(-25, 0)
+target_position = Vector2(-14, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://sepght3wg555"]
+
+[ext_resource type="AudioStream" uid="uid://dlqen0l6um0r4" path="res://SpritesMexicalipsis - copia/music/time_for_adventure.mp3" id="1_fbmny"]
+
+[node name="Music" type="AudioStreamPlayer2D" unique_id=1356427654]
+stream = ExtResource("1_fbmny")
+autoplay = true
+bus = &"Music"

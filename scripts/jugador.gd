@@ -12,6 +12,7 @@ func add_coins():
 	coins+=1
 	hud.set_coins(coins)
 
+
 func _physics_process(delta: float) -> void:
 	
 	update_animation()

@@ -104,6 +104,7 @@ size = Vector2(11, 37)
 [node name="Jugador" type="CharacterBody2D" unique_id=1202051772 groups=["Jugador"]]
 z_index = 5
 position = Vector2(4, -23)
+collision_layer = 2
 script = ExtResource("1_c1mnh")
 move_speed = 130
 jump_speed = 300
@@ -125,7 +126,10 @@ metadata/_edit_group_ = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1245093011]
 position = Vector2(-2, 3)
 zoom = Vector2(4, 4)
-limit_bottom = 120
+limit_left = -9999983
+limit_top = -9999888
+limit_right = 10000017
+limit_bottom = 232
 limit_smoothed = true
 position_smoothing_enabled = true
 metadata/_edit_group_ = true

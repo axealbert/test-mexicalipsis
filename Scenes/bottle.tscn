@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://daue1mh1g3p21" path="res://scripts/bottle.gd" id="1_6a73h"]
 [ext_resource type="Texture2D" uid="uid://d1beu0egnulm2" path="res://SpritesMexicalipsis - copia/bottlesprite.png" id="1_35es5"]
+[ext_resource type="AudioStream" uid="uid://i06uswq0dsrm" path="res://SpritesMexicalipsis - copia/sounds/coin.wav" id="3_u3hbp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35es5"]
 radius = 2.0
@@ -43,8 +44,107 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_hcbne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Musicbottle:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n4j8r"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Musicbottle:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.96666664),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqmjo"]
+_data = {
+&"RESET": SubResource("Animation_hcbne"),
+&"pickup": SubResource("Animation_n4j8r")
+}
+
 [node name="Area2D" type="Area2D" unique_id=1697067387]
 position = Vector2(6, 0)
+collision_mask = 2
 script = ExtResource("1_6a73h")
 metadata/_edit_group_ = true
 
@@ -60,5 +160,12 @@ animation = &"idle"
 autoplay = "idle"
 frame = 1
 frame_progress = 0.19799475
+
+[node name="Musicbottle" type="AudioStreamPlayer2D" parent="." unique_id=1890127264]
+stream = ExtResource("3_u3hbp")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1283311023]
+libraries/ = SubResource("AnimationLibrary_xqmjo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

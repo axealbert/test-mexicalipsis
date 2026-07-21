@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qxkoprd656ks" path="res://scripts/killzone.gd" id="1_jvagm"]
 
 [node name="Killzone" type="Area2D" unique_id=878634959]
+collision_mask = 2
 script = ExtResource("1_jvagm")
 metadata/_edit_group_ = true
 
