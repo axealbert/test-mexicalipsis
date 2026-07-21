@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var jump_speed: int
 var facing_right = true
 
+var key = 0
 var coins = 0
 @onready var hud = get_node ("/root/Map1/CanvasLayer");
 
@@ -12,7 +13,11 @@ func add_coins():
 	coins+=1
 	hud.set_coins(coins)
 
-
+func add_key():
+	key+=1
+	hud.set_key(key)
+	
+	
 func _physics_process(delta: float) -> void:
 	
 	update_animation()
