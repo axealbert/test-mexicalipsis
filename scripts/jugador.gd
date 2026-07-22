@@ -3,13 +3,14 @@ extends CharacterBody2D
 @onready var animation=$AnimatedSprite2D
 @export var move_speed: int 
 @export var jump_speed: int
+@export var scene: String
 var facing_right = true
 const max_jump = 2
 var jump_cont = 0 
 
 var key = 0
 var coins = 0
-@onready var hud = get_node ("/root/Map1/CanvasLayer");
+@onready var hud = get_node (scene);
 
 func add_coins():
 	coins+=1

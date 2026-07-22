@@ -6,5 +6,5 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Jugador"):
 		body.add_key()
-		game_manager.add_point()
+		game_manager.add_key_point()
 		animation_player.play("pickup") 

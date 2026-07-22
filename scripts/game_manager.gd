@@ -6,4 +6,14 @@ var key = 0
 
 func add_point():
 	score+=1
-	score_label.text = "You collected " + str(score) + " coins and " + str(key) + " key/s."
+	score_label.text = "You collected " + str(score) + " coins and " + str(key) + " keys."
+	
+func add_key_point():
+	key+=1
+	score_label.text = "You colected " + str(score) + " coins and " + str(key) + " keys."
+
+func get_coins():
+	return score
+
+func get_keys():
+	return key
