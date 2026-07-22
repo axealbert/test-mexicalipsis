@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var move_speed: int 
 @export var jump_speed: int
 var facing_right = true
+const max_jump = 2
+var jump_cont = 0 
 
 var key = 0
 var coins = 0
@@ -46,9 +48,13 @@ func update_animation():
 		
 		
 func jump(delta):
+	
+	if is_on_floor():
+		jump_cont = 0
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and jump_cont < max_jump:
 		velocity.y = -jump_speed
+		jump_cont+=1
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta

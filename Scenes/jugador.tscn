@@ -103,33 +103,27 @@ size = Vector2(11, 37)
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1202051772 groups=["Jugador"]]
 z_index = 5
-position = Vector2(4, -23)
+position = Vector2(5, -18)
 collision_layer = 2
 script = ExtResource("1_c1mnh")
 move_speed = 130
 jump_speed = 300
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1082166091]
 texture_filter = 1
 scale = Vector2(0.39, 0.43)
 sprite_frames = SubResource("SpriteFrames_a0p7g")
-animation = &"fall"
-frame_progress = 0.22272813
-metadata/_edit_group_ = true
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252110744]
 position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_n4xcq")
-metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1245093011]
-position = Vector2(-2, 3)
+position = Vector2(-5, -33)
 zoom = Vector2(4, 4)
-limit_left = -9999983
-limit_top = -9999888
-limit_right = 10000017
-limit_bottom = 13150
+limit_top = -9999992
+limit_bottom = 355
 limit_smoothed = true
 position_smoothing_enabled = true
-metadata/_edit_group_ = true

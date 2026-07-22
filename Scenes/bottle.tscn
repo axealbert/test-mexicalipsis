@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://i06uswq0dsrm" path="res://SpritesMexicalipsis - copia/sounds/coin.wav" id="3_u3hbp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35es5"]
-radius = 2.0
-height = 8.0
+radius = 3.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a73h"]
 atlas = ExtResource("1_35es5")
@@ -149,12 +149,12 @@ script = ExtResource("1_6a73h")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=362099436]
-position = Vector2(-1, 1)
+position = Vector2(-2, -1)
 shape = SubResource("CapsuleShape2D_35es5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1163068576]
-position = Vector2(-1, 1)
-scale = Vector2(0.11062503, 0.10515627)
+position = Vector2(-2.0000002, -1)
+scale = Vector2(0.1453125, 0.13812898)
 sprite_frames = SubResource("SpriteFrames_xqmjo")
 animation = &"idle"
 autoplay = "idle"

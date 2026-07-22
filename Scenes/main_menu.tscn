@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dwrc11vqdfkeq" path="res://scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://dsjqyhpnoe1rx" path="res://SpritesMexicalipsis - copia/fonts/PixelOperator8-Bold.ttf" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://b6fqy4hnd2t8p" path="res://SpritesMexicalipsis - copia/Captura de pantalla 2026-07-21 011935.png" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://edsjhkht03ed" path="res://SpritesMexicalipsis - copia/Captura de pantalla 2026-07-22 104408.png" id="2_1ehe0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
-texture = ExtResource("1_48xlc")
+texture = ExtResource("2_1ehe0")
 modulate_color = Color(0.32156864, 0.32156864, 0.32156864, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
