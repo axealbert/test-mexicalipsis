@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjto0"]
@@ -61,11 +61,12 @@ radius = 8.0
 height = 38.0
 
 [node name="Momia" type="CharacterBody2D" unique_id=1171920546]
-scale = Vector2(-1, 1)
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_r7n3g")
 angle = 60.0
 length = 500.0
-speed = 150.0
+speed = 75.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1383853861]
 position = Vector2(1, 4)
@@ -75,8 +76,9 @@ shape = SubResource("CapsuleShape2D_vlimc")
 position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6mtqt")
-animation = &"idle"
-frame_progress = 0.7491197
+animation = &"run"
+frame_progress = 0.075624235
+flip_h = true
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("3_qgoyk")]
 position = Vector2(1, 4)
@@ -88,7 +90,8 @@ shape = SubResource("CapsuleShape2D_pjto0")
 collision_mask = 2
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=516907381]
-debug_enabled = true
+path_desired_distance = 40.0
+target_desired_distance = 40.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1693672934]
 wait_time = 0.5
