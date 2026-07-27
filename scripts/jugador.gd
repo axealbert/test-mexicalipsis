@@ -65,7 +65,7 @@ func flip():
 		scale.x *= -1
 		
 		facing_right = not facing_right
-		animation.play("run")
+		#animation.play("run")
 		
 		
 	

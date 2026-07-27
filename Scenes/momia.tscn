@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cg5ukwdsjlxsy" path="res://sprites/momias_sheet3.png" id="2_r7n3g"]
 [ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="3_qgoyk"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlimc"]
+radius = 8.0
+height = 38.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlimc"]
 atlas = ExtResource("2_r7n3g")
 region = Rect2(0, 0, 100, 100)
@@ -57,19 +61,37 @@ radius = 8.0
 height = 38.0
 
 [node name="Momia" type="CharacterBody2D" unique_id=1171920546]
+scale = Vector2(-1, 1)
 script = ExtResource("1_r7n3g")
 angle = 60.0
 length = 500.0
+speed = 150.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1383853861]
+position = Vector2(1, 4)
+shape = SubResource("CapsuleShape2D_vlimc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2016466502]
 position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6mtqt")
 animation = &"idle"
-frame_progress = 0.8430601
+frame_progress = 0.7491197
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("3_qgoyk")]
 position = Vector2(1, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=877854010]
 shape = SubResource("CapsuleShape2D_pjto0")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=545503631]
+collision_mask = 2
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=516907381]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1693672934]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
