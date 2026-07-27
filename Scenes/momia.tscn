@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c3onxbkptgfug"]
+
+[ext_resource type="Script" uid="uid://bmm8mkgfkhn0m" path="res://scripts/momia.gd" id="1_r7n3g"]
+[ext_resource type="Texture2D" uid="uid://cg5ukwdsjlxsy" path="res://sprites/momias_sheet3.png" id="2_r7n3g"]
+[ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="3_qgoyk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlimc"]
+atlas = ExtResource("2_r7n3g")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mro4i"]
+atlas = ExtResource("2_r7n3g")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg3ps"]
+atlas = ExtResource("2_r7n3g")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ewa"]
+atlas = ExtResource("2_r7n3g")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pul7t"]
+atlas = ExtResource("2_r7n3g")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mtqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlimc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mro4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg3ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ewa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pul7t")
+}],
+"loop": true,
+"name": &"run",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjto0"]
+radius = 8.0
+height = 38.0
+
+[node name="Momia" type="CharacterBody2D" unique_id=1171920546]
+script = ExtResource("1_r7n3g")
+angle = 60.0
+length = 500.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2016466502]
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6mtqt")
+animation = &"idle"
+frame_progress = 0.8430601
+
+[node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("3_qgoyk")]
+position = Vector2(1, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=877854010]
+shape = SubResource("CapsuleShape2D_pjto0")

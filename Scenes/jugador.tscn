@@ -129,7 +129,7 @@ shape = SubResource("CapsuleShape2D_a0p7g")
 position = Vector2(-5, -33)
 zoom = Vector2(4, 4)
 limit_top = -9999992
-limit_bottom = 355
+limit_bottom = 379
 limit_smoothed = true
 position_smoothing_enabled = true
 
