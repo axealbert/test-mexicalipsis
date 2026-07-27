@@ -838,8 +838,8 @@ position = Vector2(64, 158)
 scene = "/root/Map2/CanvasLayer"
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador" unique_id=316719943]
-position = Vector2(5, -45)
-scale = Vector2(1.203125, 1)
+position = Vector2(85, 6.0000076)
+scale = Vector2(0.86816406, 1.1018668)
 color = Color(1, 0.7019608, 0.2509804, 1)
 energy = 1.5
 shadow_enabled = true
@@ -861,4 +861,4 @@ shape = SubResource("WorldBoundaryShape2D_hureu")
 region_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2012505551]
-color = Color(0.35606432, 0.35606432, 0.35606432, 1)
+color = Color(0.2936601, 0.2936601, 0.29366004, 1)

@@ -18,7 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 	coins = game_manager.get_coins()
 	keys = game_manager.get_keys()
 	
-	if body.is_in_group("Jugador") and coins == 10 and keys == 1:
+	if body.is_in_group("Jugador") and coins >= 10 and keys >= 1:
 		change_scene()
+	
 		
 	
