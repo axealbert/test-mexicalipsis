@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dcwbt4hkd25ge"]
+
+[ext_resource type="Script" uid="uid://ewqg4wwv1ft2" path="res://scripts/bala.gd" id="1_melus"]
+[ext_resource type="Texture2D" uid="uid://bw22yge4ecmdb" path="res://SpritesMexicalipsis - copia/shoot.png" id="2_ugj5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_melus"]
+radius = 0.99999636
+height = 5.999979
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6qki"]
+atlas = ExtResource("2_ugj5x")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g4ud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6qki")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="bala" type="Area2D" unique_id=546286655]
+script = ExtResource("1_melus")
+velocidad_bala = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2121703939]
+position = Vector2(14, -1)
+rotation = 1.5735158
+shape = SubResource("CapsuleShape2D_melus")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1253868357]
+position = Vector2(12.999999, -1)
+scale = Vector2(0.14125001, 0.14125001)
+sprite_frames = SubResource("SpriteFrames_8g4ud")
+animation = &"shoot"

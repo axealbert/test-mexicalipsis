@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cbfu5g677uawk" path="res://sprites/2d_lights_and_shadows_neutral_point_light.webp" id="8_gnumt"]
 [ext_resource type="PackedScene" uid="uid://cglnbn6pcbaod" path="res://Scenes/ui.tscn" id="8_li4nk"]
 [ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="9_hureu"]
+[ext_resource type="PackedScene" uid="uid://bx7mvol62pfto" path="res://Scenes/ui_pistols.tscn" id="10_4bif2"]
 [ext_resource type="PackedScene" uid="uid://c3onxbkptgfug" path="res://Scenes/momia.tscn" id="11_lyleh"]
+[ext_resource type="PackedScene" uid="uid://clgrqi1nplvct" path="res://Scenes/guns.tscn" id="13_mbmb3"]
+[ext_resource type="FontFile" uid="uid://cpvovqu3mm4nv" path="res://SpritesMexicalipsis - copia/fonts/PixelOperator8.ttf" id="14_k4hyw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4hyw"]
 texture = ExtResource("1_54pvs")
@@ -1099,6 +1102,7 @@ tile_set = SubResource("TileSet_ofy8c")
 [node name="Jugador" parent="." unique_id=1202051772 instance=ExtResource("7_mbmb3")]
 position = Vector2(64, 158)
 scene = "/root/Map2/CanvasLayer"
+scene_pistol = "/root/Map2/ui_pistols"
 
 [node name="PointLight2D" type="PointLight2D" parent="Jugador" unique_id=316719943]
 position = Vector2(58.5, 35.000008)
@@ -1109,7 +1113,12 @@ shadow_enabled = true
 shadow_filter = 2
 texture = ExtResource("8_gnumt")
 
+[node name="Marker2D" type="Marker2D" parent="Jugador" unique_id=368590221]
+position = Vector2(17, -1)
+
 [node name="CanvasLayer" parent="." unique_id=1825512844 instance=ExtResource("8_li4nk")]
+
+[node name="ui_pistols" parent="." unique_id=138345657 instance=ExtResource("10_4bif2")]
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("9_hureu")]
 position = Vector2(165, 608)
@@ -1127,7 +1136,23 @@ region_enabled = true
 color = Color(0.2936601, 0.2936601, 0.29366004, 1)
 
 [node name="Momia" parent="." unique_id=1171920546 instance=ExtResource("11_lyleh")]
-position = Vector2(405, 188)
+position = Vector2(427, 190)
 motion_mode = 0
+angle = 80.0
 length = 225.0
-speed = 100.0
+speed = 95.0
+
+[node name="guns" parent="." unique_id=1615945248 instance=ExtResource("13_mbmb3")]
+position = Vector2(189, 199)
+
+[node name="Labels" type="Node" parent="." unique_id=233318283]
+
+[node name="Label" type="Label" parent="Labels" unique_id=1750720609]
+offset_left = 171.0
+offset_top = 137.0
+offset_right = 373.0
+offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("14_k4hyw")
+theme_override_font_sizes/font_size = 8
+text = "Press E to shoot
+"

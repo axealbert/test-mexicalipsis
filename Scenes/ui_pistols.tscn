@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bx7mvol62pfto"]
+
+[ext_resource type="Script" uid="uid://bgy1mepy7y5qy" path="res://scripts/ui_pistols.gd" id="1_1x18v"]
+[ext_resource type="Texture2D" uid="uid://cx7yeofjbxuoj" path="res://SpritesMexicalipsis - copia/pistols.png" id="1_g2a10"]
+
+[node name="ui_pistols" type="CanvasLayer" unique_id=138345657]
+script = ExtResource("1_1x18v")
+
+[node name="Control" type="Control" parent="." unique_id=757263245]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 246.0
+offset_top = 36.0
+offset_right = 286.0
+offset_bottom = 76.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1043549716]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 2.0
+offset_right = 318.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 75
+text = "00
+"
+
+[node name="Node2D" type="Node2D" parent="Control" unique_id=818785348]
+position = Vector2(171, 23)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Node2D" unique_id=1369782413]
+position = Vector2(2, 28)
+texture = ExtResource("1_g2a10")

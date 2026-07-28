@@ -12,6 +12,7 @@ func add_key_point():
 	key+=1
 	score_label.text = "You colected " + str(score) + "/10 coins and " + str(key) + "/1 keys."
 
+	
 func get_coins():
 	return score
 

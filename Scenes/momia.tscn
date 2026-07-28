@@ -57,8 +57,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pjto0"]
-radius = 8.0
-height = 38.0
+radius = 9.0
+height = 44.0
 
 [node name="Momia" type="CharacterBody2D" unique_id=1171920546]
 motion_mode = 1
@@ -76,8 +76,8 @@ shape = SubResource("CapsuleShape2D_vlimc")
 position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6mtqt")
-animation = &"run"
-frame_progress = 0.075624235
+animation = &"idle"
+frame_progress = 0.2825081
 flip_h = true
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("3_qgoyk")]
