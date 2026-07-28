@@ -102,3 +102,12 @@ func move_x():
 	
 	velocity.x = direction * move_speed
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("salir"):
+		get_tree().quit()
+		
+	if event.is_action_pressed("cambiar_modo_visualizacion"):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

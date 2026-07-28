@@ -62,7 +62,6 @@ radius = 9.0
 height = 44.0
 
 [node name="Momia" type="CharacterBody2D" unique_id=1171920546]
-motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_r7n3g")
 angle = 60.0

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://wosf3pkrq5br"]
 
-[ext_resource type="Script" uid="uid://gtcsfxmhjmup" path="res://scripts/game_manager.gd" id="1_yyfkx"]
+[ext_resource type="Script" uid="uid://b73kdfteieji7" path="res://scripts/gamemanager.gd" id="1_ym1ta"]
 [ext_resource type="FontFile" uid="uid://dsjqyhpnoe1rx" path="res://SpritesMexicalipsis - copia/fonts/PixelOperator8-Bold.ttf" id="2_eka4w"]
 [ext_resource type="PackedScene" uid="uid://c5ag8eh0wwykl" path="res://Scenes/jugador.tscn" id="2_vjepk"]
 [ext_resource type="Texture2D" uid="uid://cnn5d8mi50p6m" path="res://SpritesMexicalipsis - copia/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/background_/terrain_.png" id="2_ynalf"]
@@ -1619,25 +1619,19 @@ size = Vector2(30, 25)
 
 [node name="Map1" type="Node2D" unique_id=1943373487]
 
-[node name="GameManager" type="Node" parent="." unique_id=699321775]
+[node name="Gamemanager" type="Node" parent="." unique_id=533967999]
 unique_name_in_owner = true
-script = ExtResource("1_yyfkx")
+script = ExtResource("1_ym1ta")
 
-[node name="Label" type="Label" parent="GameManager" unique_id=1409292467]
-anchors_preset = -1
-anchor_left = 0.71800005
-anchor_top = -0.11100001
-anchor_right = 0.71800005
-anchor_bottom = -0.11100001
-offset_left = 678.35986
-offset_top = -120.77999
-offset_right = 780.35986
-offset_bottom = -90.77999
+[node name="Label" type="Label" parent="Gamemanager" unique_id=1614877840]
+offset_left = 1766.0
+offset_top = -233.0
+offset_right = 1900.0
+offset_bottom = -210.0
 theme_override_fonts/font = ExtResource("2_eka4w")
 theme_override_font_sizes/font_size = 8
-text = "You collected 0/10 coins and 0/1 keys."
-horizontal_alignment = 1
-autowrap_mode = 2
+text = "You collected 0/10 
+coins and 0/1 keys."
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=551510239]
 z_index = -1
@@ -1654,6 +1648,7 @@ tile_set = SubResource("TileSet_4ov7l")
 position = Vector2(-570, 43)
 jump_speed = 325
 scene = "/root/Map1/CanvasLayer"
+scene_pistol = "/root/Map2/ui_pistols"
 
 [node name="CanvasLayer" parent="." unique_id=1825512844 instance=ExtResource("4_2t7xj")]
 
@@ -1769,15 +1764,26 @@ Recolect 10 bottles and a key
 to move to the next level "
 
 [node name="Label4" type="Label" parent="Labels" unique_id=136196062]
-offset_left = 2115.0
-offset_top = -252.0
-offset_right = 2192.0
-offset_bottom = -233.0
+offset_left = 1802.0
+offset_top = -203.0
+offset_right = 1879.0
+offset_bottom = -184.0
 theme_override_fonts/font = ExtResource("12_246nu")
 theme_override_font_sizes/font_size = 8
 text = "Great Job!
 "
 horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Labels" unique_id=1475027960]
+offset_left = -81.0
+offset_top = -216.0
+offset_right = 25.0
+offset_bottom = -175.0
+theme_override_fonts/font = ExtResource("12_246nu")
+theme_override_font_sizes/font_size = 8
+text = "Press Esc to Exit and
+F to full screen"
 autowrap_mode = 2
 
 [node name="Static_objetcs" type="Node" parent="." unique_id=1215258183]
@@ -1862,7 +1868,7 @@ shape = SubResource("RectangleShape2D_ulxwn")
 
 [node name="PointLight2D" type="PointLight2D" parent="Door" unique_id=728762845]
 position = Vector2(0, 1)
-color = Color(0.8784314, 0.8784314, 0.8784314, 1)
+color = Color(0.9137255, 0.4862745, 0.14117648, 1)
 energy = 1.5
 texture = ExtResource("23_ym1ta")
 
@@ -1879,6 +1885,4 @@ position = Vector2(2152, -13)
 waypoints = [NodePath("../waypoints/waypoint"), NodePath("../waypoints/waypoint2")]
 speed = 100.0
 
-[connection signal="area_shape_entered" from="Recolectable_objetcs/Key" to="GameManager" method="_on_key_area_shape_entered"]
-[connection signal="body_entered" from="Recolectable_objetcs/Key" to="GameManager" method="_on_key_body_entered"]
 [connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]

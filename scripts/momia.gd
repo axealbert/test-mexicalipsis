@@ -24,8 +24,9 @@ func _ready() -> void:
 func recibir_dano(cantidad: int) -> void:
 	
 	if cantidad > 0:
-		danomomia.play()
 		animated_sprite_2d.self_modulate = Color.RED
+		danomomia.play()
+	
 	vida -= cantidad
 	if vida <= 0:
 		queue_free()
@@ -35,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
 	
 	# Ahorrar procesos físicos, cada 2 ciclos se activa el raycast
 	#if Engine.get_physics_frames() % 2 != 0:
@@ -54,7 +56,6 @@ func _physics_process(delta: float) -> void:
 	
 		animated_sprite_2d.play("run")
 	else:
-		#animated_sprite_2d.self_modulate = Color.WHITE
 		animated_sprite_2d.play("idle")
 		velocity.x = 0
 	
