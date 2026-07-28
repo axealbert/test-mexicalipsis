@@ -1,7 +1,7 @@
 # MEXICALIPSIS GAME
 This project is a game set in a post-apocalyptic future in Mexico ruled by rats. It has three levels, each taking place in important locations throughout Mexico (Chichen Itza, the mummies of Guanajuato, and La Rumorosa, Plaza Calafia). Created for entertainment and to experiment with the Godot Engine platform.
 
-# HOW THIS WAS MADE
+## How this was made
 This project was made with Godot Engine, below I’ve included the links below, using the [brackeys]( https://brackeysgames.itch.io/brackeys-platformer-bundle?download) template and with the guide [Horizon Guides] (https://guides.horizons.hackclub.com/guides/godot-guide/) and a lot of youtube videos that I will put in notes. The language used in this project is GDScript. For the design of the player, the enemies and items I use Pixilart, which is a free design website, I chose a size of 100x100 pixels for the sprites. 
 
 **Problems I had:**
@@ -12,17 +12,17 @@ This project was made with Godot Engine, below I’ve included the links below, 
 4.	At first I was using raycast to make the enemy bounce between two walls, but for this you need to change the collision layer of the player so the enemy does not get detected as a wall/tilemap, but I think is better to use waypoints for this
 
 
-# HOW TO RUN THE PROJECT :=)
+## How to run the project :=)
 1.	Download [Godot Engine] (https://godotengine.org/download/windows/)
 2.	Clone the repository: ```sh git clone https://github.com/axealbert/test-mexicalipsis.git ´´´
 3.	Open Godot Engine and click on Import
 4.	Open the clone folder and select the project.godot file
 5.	Once you have imported the project, click on the run button or F5 and that’s it
 
-# DEMO LINK
+## DEMO LINK
 [Play Mexicalipsis] (https://axel-alberto.itch.io/mexicalipsis)
 
-# SCREENSHOTS AND GIFS
+## SCREENSHOTS AND GIFS
 
 <img width="921" height="458" alt="image" src="https://github.com/user-attachments/assets/dbef0b6f-94bf-4e33-a906-3040b5c8d69f" />
 <img width="921" height="474" alt="image" src="https://github.com/user-attachments/assets/556723a8-5ba3-4e68-9360-0533a824d228" />
@@ -31,7 +31,7 @@ This project was made with Godot Engine, below I’ve included the links below, 
 <img width="921" height="449" alt="image" src="https://github.com/user-attachments/assets/7b912923-3701-4502-98d0-1e63b1276b10" />
 <img width="921" height="277" alt="image" src="https://github.com/user-attachments/assets/b9141615-739e-4eab-9b77-e494b5feedbd" />
 
-# DISCLOSURE AI
+## Disclosure AI
 AI was used in this project to debug errors and generate ideas for the level structure, as well as to gather information about archaeological sites in Mexico and a description of each one in order to choose the theme for each level.
 
 ### NOTES
