@@ -8,17 +8,30 @@ extends CharacterBody2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @export var speed: float
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var danomomia: AudioStreamPlayer2D = $danomomia
 
 
 
+@export var vida: int = 10
 var angle_rad
 var player
 var facing_right = false
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Jugador")
 	angle_rad = deg_to_rad(angle/2)
 	
+func recibir_dano(cantidad: int) -> void:
+	
+	if cantidad > 0:
+		danomomia.play()
+		animated_sprite_2d.self_modulate = Color.RED
+	vida -= cantidad
+	if vida <= 0:
+		queue_free()
+	
 func _physics_process(delta: float) -> void:
+	
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -27,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	#if Engine.get_physics_frames() % 2 != 0:
 	#	return
 	if is_in_cone() and has_line_of_sight():
-		animated_sprite_2d.self_modulate = Color.RED
+		#animated_sprite_2d.self_modulate = Color.RED
 		#if is_on_floor():
 		var direction = to_local(navigation_agent_2d.get_next_path_position()).normalized()
 		velocity.x = direction.x * speed
@@ -41,10 +54,11 @@ func _physics_process(delta: float) -> void:
 	
 		animated_sprite_2d.play("run")
 	else:
-		animated_sprite_2d.self_modulate = Color.WHITE
+		#animated_sprite_2d.self_modulate = Color.WHITE
 		animated_sprite_2d.play("idle")
 		velocity.x = 0
-		
+	
+	
 	move_and_slide()
 """
 func _draw() -> void:

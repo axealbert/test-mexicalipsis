@@ -122,6 +122,7 @@ _data = {
 
 [node name="guns" type="Area2D" unique_id=1615945248]
 position = Vector2(20, 5)
+collision_mask = 2
 script = ExtResource("1_1tmkc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2037879300]

@@ -36,3 +36,5 @@ position = Vector2(12.999999, -1)
 scale = Vector2(0.14125001, 0.14125001)
 sprite_frames = SubResource("SpriteFrames_8g4ud")
 animation = &"shoot"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

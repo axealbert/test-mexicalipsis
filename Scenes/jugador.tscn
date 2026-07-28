@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dt45d7rscejpn" path="res://SpritesMexicalipsis - copia/pixil-frame-0 (2).png" id="3_a0p7g"]
 [ext_resource type="Texture2D" uid="uid://jgjgl7xk6n2s" path="res://SpritesMexicalipsis - copia/spritesrun.png" id="3_tn1hq"]
 [ext_resource type="Texture2D" uid="uid://gt271lssdv1f" path="res://SpritesMexicalipsis - copia/shoot_frame.png" id="5_n4xcq"]
+[ext_resource type="AudioStream" uid="uid://pwo7afa5qm01" path="res://SpritesMexicalipsis - copia/sounds/jump.wav" id="6_iw3ti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0p7g"]
 atlas = ExtResource("3_a0p7g")
@@ -147,5 +148,8 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=868559493]
-visible = false
 occluder = SubResource("OccluderPolygon2D_a0p7g")
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1398920541]
+stream = ExtResource("6_iw3ti")
+bus = &"SFX"

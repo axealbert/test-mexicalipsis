@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animation=$AnimatedSprite2D
+@onready var jumpsound: AudioStreamPlayer2D = $jumpsound
+
 @export var move_speed: int 
 @export var jump_speed: int
 @export var scene: String
@@ -43,9 +45,10 @@ func _physics_process(delta: float) -> void:
 
 func disparo():
 	
-	if guns > 0:
+	if guns > 0 and velocity.x == 0:
 		var shoot = bala.instantiate()
 		if Input.is_action_just_pressed("shoot"):
+			
 			get_parent().add_child(shoot)
 			shoot.position = $Marker2D.global_position
 			if not facing_right:
@@ -77,6 +80,7 @@ func jump(delta):
 		jump_cont = 0
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_cont < max_jump:
+		jumpsound.play()
 		velocity.y = -jump_speed
 		jump_cont+=1
 
@@ -93,6 +97,8 @@ func flip():
 		
 	
 func move_x():
+	
 	var direction := Input.get_axis("move_left", "move_right")
+	
 	velocity.x = direction * move_speed
 	

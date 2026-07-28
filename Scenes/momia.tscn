@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmm8mkgfkhn0m" path="res://scripts/momia.gd" id="1_r7n3g"]
 [ext_resource type="Texture2D" uid="uid://cg5ukwdsjlxsy" path="res://sprites/momias_sheet3.png" id="2_r7n3g"]
 [ext_resource type="PackedScene" uid="uid://b34qlaf0crf64" path="res://Scenes/killzone.tscn" id="3_qgoyk"]
+[ext_resource type="AudioStream" uid="uid://nibvwh2ivxka" path="res://SpritesMexicalipsis - copia/sounds/hurt.wav" id="4_r7n3g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlimc"]
 radius = 8.0
@@ -77,7 +78,7 @@ position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_6mtqt")
 animation = &"idle"
-frame_progress = 0.2825081
+frame_progress = 0.67531306
 flip_h = true
 
 [node name="Killzone" parent="." unique_id=878634959 instance=ExtResource("3_qgoyk")]
@@ -96,5 +97,9 @@ target_desired_distance = 40.0
 [node name="Timer" type="Timer" parent="." unique_id=1693672934]
 wait_time = 0.5
 autostart = true
+
+[node name="danomomia" type="AudioStreamPlayer2D" parent="." unique_id=311145047]
+stream = ExtResource("4_r7n3g")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
